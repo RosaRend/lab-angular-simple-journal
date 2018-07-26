@@ -1,11 +1,30 @@
-<p>
-  entry-list works!
-</p>
+<form action="" method="post">
 
-<div>{{theEntries|json}}</div>
+<label>Title</label>
+<br>
+<input type="text" name="theTitle" [(ngModel)]="newEntry.title">
+<br>
+<label>Content</label>
+<br>
+<textarea type="text" name="theContent" [(ngModel)]="newEntry.content"></textarea>
+<br>
+<button (click)="diaryEntry(newEntry)">Add New Entry</button> 
+
+</form>
+
+
+
+<h1>Journal Entries</h1>
+
+
+<!-- <div>{{ theEntries }}</div> -->
 <!-- <button (click)=""></button> -->
-<div *ngFor="let entry of theEntries">
-  <H1>{{entry.title}}</H1>
-  <p><b>Content:</b> {{entry.content}}</p>
-</div>
+<div *ngFor="let log of theEntries">
+
+  <h2>{{log.title}}</h2>
+  <p><b>Content:</b> {{log.content}}</p>
+
+  <a [routerLink]="['entry', log._id]">See Details</a>
+
+  </div>
 
