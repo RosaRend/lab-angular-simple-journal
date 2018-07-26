@@ -1,0 +1,11 @@
+<p>
+  entry-list works!
+</p>
+
+<div>{{theEntries|json}}</div>
+<!-- <button (click)=""></button> -->
+<div *ngFor="let entry of theEntries">
+  <H1>{{entry.title}}</H1>
+  <p><b>Content:</b> {{entry.content}}</p>
+</div>
+
